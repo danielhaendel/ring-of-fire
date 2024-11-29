@@ -1,0 +1,35 @@
+section {
+  background-image: url("./../../assets/fire-ring.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+
+  > h1 {
+    font-family: Hellbone;
+    font-size: 8rem;
+    color: #ff3800;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  > div {
+    display: flex;
+    justify-content: center;
+
+    > img {
+      position: absolute;
+      top: 40%;
+      width: 280px;
+      height: auto;
+
+      &:hover {
+        width: 290px;
+        height: auto;
+        filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.46));
+      }
+    }
+  }
+}
