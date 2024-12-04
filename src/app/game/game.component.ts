@@ -6,6 +6,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogAddPlayerComponent} from "../dialog-add-player/dialog-add-player.component";
+import {GameInfoComponent} from "../game-info/game-info.component";
 
 
 
@@ -16,7 +17,8 @@ import {DialogAddPlayerComponent} from "../dialog-add-player/dialog-add-player.c
     NgStyle,
     PlayerComponent,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    GameInfoComponent
   ],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
@@ -34,13 +36,11 @@ export class GameComponent {
 
   newGame() {
     this.game = new Game();
-    console.log(this.game);
   }
 
   takeCard() {
     if (!this.pickCardAnimation && this.game.stack.length > 0) {
       this.currentCard = this.game.stack.pop();
-      console.log(this.game.playedCards);
       this.pickCardAnimation = true;
       setTimeout(() => {
         if (this.currentCard) {

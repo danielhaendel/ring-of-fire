@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Spieler hinzufügen</h2>
 <mat-dialog-content>
-  <p>Bitte den Namen deines Suff-Kumpels eingeben</p>
+  <p>Bitte den Namen deines <br>Suff-Kumpels eingeben</p>
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput [(ngModel)]="name">
@@ -8,5 +8,5 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Schließen</button>
-  <button mat-button [mat-dialog-close]="name" cdkFocusInitial>Hinzufügen</button>
+  <button mat-button [disabled]="name.length == 0" [mat-dialog-close]="name" cdkFocusInitial>Hinzufügen</button>
 </mat-dialog-actions>

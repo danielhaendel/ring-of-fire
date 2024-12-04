@@ -1,10 +1,15 @@
-import {Component, output} from '@angular/core';
-import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import {Component, OnInit} from '@angular/core';
+import {
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle
+} from "@angular/material/dialog";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
-import {Game} from "../../models/game";
 
 @Component({
   selector: 'app-dialog-add-player',
@@ -23,21 +28,14 @@ import {Game} from "../../models/game";
   templateUrl: './dialog-add-player.component.html',
   styleUrl: './dialog-add-player.component.scss'
 })
-export class DialogAddPlayerComponent {
+export class DialogAddPlayerComponent implements OnInit {
   name: string = '';
-  game = Game;
 
-  ngOnInit() {
-    console.log('DialogAddPlayerComponent initialized');
-  }
+  constructor(public dialogRef: MatDialogRef<DialogAddPlayerComponent>,) {}
 
-  addPlayer(name: string) {
-    // If(name) {
-    //   this.game.players.push(name);
-    // }
-  }
+  ngOnInit() {}
 
-  onNoClick(){
-
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }
